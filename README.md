@@ -11,6 +11,15 @@ A colocated deployment of microPCF can be launched locally with [Vagrant](https:
 * A microPCF Vagrantfile from the [latest release](https://github.com/pivotal-cf/micropcf/releases/latest) or [nightly builds](https://micropcf.s3.amazonaws.com/nightly/index.html)
 * [Vagrant](https://vagrantup.com/) 1.7+ installed
 
+#### Building a microPCF Box
+
+If you change any Diego components, you'll need to build a local Vagrant box with your changes.  If you don't plan to change any Diego components, you can update the `box_version` property in the `Vagrantfile` to point to a [pre-built microPCF box on Atlas](https://atlas.hashicorp.com/micropcf/boxes/base) and skip this step.
+
+```bash
+./images/base/build -only=virtualbox-iso
+vagrant box add --force micropcf-virtualbox-v0.box --name micropcf/base
+```
+
 ##### Spin up a virtual environment
 
 Download the Vagrantfile into a new local folder, and open a prompt to that folder:
