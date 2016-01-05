@@ -1,9 +1,12 @@
 .DS_Store
 *.box
 .vagrant
+.idea
+micropcf.iml
 
 /images/bosh/bin
 /images/bosh/pkg
 
 /images/base/output
 /images/micropcf/output
+
